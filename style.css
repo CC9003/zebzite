@@ -1,0 +1,494 @@
+body, h1, h2, p, img, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(45deg, #002fff, #ff9900, #ffff00, #00cc00, #0066ff, #6600cc, #ff0099);
+    background-size: 1200% 1200%;
+    animation: rainbowBackground 10s ease infinite;
+    color: #660066;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+@keyframes rainbowBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.navbar {
+    background-color: #ff9900;
+    padding: 10px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: #3300cc;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff0099;
+    animation: rainbowText 3s infinite, rotateText 2s linear infinite;
+}
+
+@keyframes rainbowText {
+    0% {
+        color: #ff0099;
+    }
+    14% {
+        color: #ff9900;
+    }
+    28% {
+        color: #ffff00;
+    }
+    42% {
+        color: #00cc00;
+    }
+    57% {
+        color: #0066ff;
+    }
+    71% {
+        color: #6600cc;
+    }
+    85% {
+        color: #ff0099;
+    }
+    100% {
+        color: #ff9900;
+    }
+}
+
+@keyframes rotateText {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 153, 0.2), rgba(255, 153, 0, 0.2));
+    transform: skewY(-10deg);
+    z-index: -1;
+    animation: gradientAnimation 15s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0%, 100% {
+        transform: skewY(-10deg) translateX(-120%);
+    }
+    50% {
+        transform: skewY(-10deg) translateX(120%);
+    }
+}
+
+.tagline {
+    font-size: 24px;
+    color: #ff66cc;
+    margin-top: 10px;
+    transition: font-size 0.3s;
+    position: relative;
+}
+
+.tagline::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #ff66cc;
+    animation: taglineBar 2s ease infinite;
+}
+
+@keyframes taglineBar {
+    0%, 100% {
+        width: 50px;
+    }
+    50% {
+        width: 100px;
+    }
+}
+
+
+.content {
+    padding: 50px 0;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(ellipse at center, #ff66cc 0%, transparent 50%);
+    opacity: 0.2;
+    z-index: -1;
+    animation: gradientPulse 6s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+}
+
+.content ul {
+    text-align: left;
+    padding-left: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.content ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(255, 0, 0, 0.3), transparent, rgba(0, 0, 255, 0.3));
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: stretchGradient 5s ease-in-out infinite;
+}
+
+@keyframes stretchGradient {
+    0%, 100% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+}
+
+footer {
+    background-color: #ffcc00;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent, rgba(0, 0, 0, 0.3));
+    transform: skewY(-20deg);
+    z-index: -1;
+    animation: skewGradient 10s linear infinite;
+}
+
+@keyframes skewGradient {
+    0%, 100% {
+        transform: skewY(-20deg) translateX(-120%);
+    }
+    50% {
+        transform: skewY(-20deg) translateX(120%);
+    }
+}
+
+
+h1 {
+    font-size: 80px;
+    color: #ff0099;
+    transition: transform 0.3s, color 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+h1::before {
+    content: 'WOW';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: rgba(255, 102, 204, 0.5);
+    opacity: 0.7;
+    animation: wowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes wowText {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+h1:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #ff66cc;
+}
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    opacity: 0;
+    animation: neonGlow 5s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes neonGlow {
+    0%, 100% {
+        opacity: 0;
+        box-shadow: 0 0 20px #ff0099, 0 0 40px #ff0099, 0 0 60px #ff0099;
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 30px #ff0099, 0 0 50px #ff0099, 0 0 80px #ff0099;
+    }
+}
+
+.content ul li {
+    position: relative;
+    animation: floatingIcons 4s ease-in-out infinite;
+}
+
+@keyframes floatingIcons {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.tagline {
+    animation: glowingText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowingText {
+    0%, 100% {
+        text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+    }
+    50% {
+        text-shadow: 0 0 15px #ff66cc, 0 0 25px #ff66cc, 0 0 40px #ff66cc;
+    }
+}
+
+.navbar a:hover {
+    background: linear-gradient(45deg, #ff0099, #ff9900, #ffff00, #00cc00, #0066ff, #6600cc, #ff0099);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+header {
+    animation: bounceHeader 3s ease-in-out infinite alternate;
+}
+
+@keyframes bounceHeader {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+h1:hover {
+    transform: scale(1.2);
+    color: #ff66cc;
+    transition: transform 0.3s, color 0.5s;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    opacity: 0;
+    animation: neonGlow 5s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes neonGlow {
+    0%, 100% {
+        opacity: 0;
+        box-shadow: 0 0 50px #ff0099, 0 0 100px #ff0099, 0 0 150px #ff0099;
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 75px #ff0099, 0 0 125px #ff0099, 0 0 200px #ff0099;
+    }
+}
+
+.content ul li {
+    position: relative;
+    animation: floatingIcons 4s ease-in-out infinite;
+}
+
+@keyframes floatingIcons {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+.tagline {
+    animation: glowingText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowingText {
+    0%, 100% {
+        text-shadow: 0 0 20px #ff66cc, 0 0 40px #ff66cc, 0 0 60px #ff66cc;
+    }
+    50% {
+        text-shadow: 0 0 30px #ff66cc, 0 0 50px #ff66cc, 0 0 80px #ff66cc;
+    }
+}
+
+.navbar a:hover {
+    background: linear-gradient(45deg, #ff0099, #ff9900, #ffff00, #00cc00, #0066ff, #6600cc, #ff0099);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbowHover 3s ease-in-out infinite alternate;
+}
+
+@keyframes rainbowHover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+header {
+    animation: bounceHeader 3s ease-in-out infinite alternate;
+}
+
+@keyframes bounceHeader {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+h1:hover {
+    transform: scale(1.3);
+    color: #ff66cc;
+    transition: transform 0.3s, color 0.5s;
+    animation: zoomH1 2s ease-in-out infinite alternate;
+}
+
+@keyframes zoomH1 {
+    0%, 100% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar li {
+        margin: 0 10px;
+    }
+
+    .content {
+        padding: 30px 0;
+    }
+
+    .content ul {
+        padding-left: 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar li {
+        margin: 0 5px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .content ul {
+        padding-left: 5px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+}
+
+
